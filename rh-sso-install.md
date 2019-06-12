@@ -12,9 +12,13 @@ If the environment you are testing this in does not already have a SAML Identity
 
 ## Warning
 
-**WARNING**: The RH-SSO install and instructions provided here are not intended for produciton use and are intended for sandbox testing fo the SAML proxy integration only.
+**WARNING**: The RH-SSO install and instructions provided here are not intended for production use and are intended for sandbox testing fo the SAML proxy integration only.
 
 ## Setup
+
+### Source your environment variables
+
+from [Install & Configure SAML Proxy] (saml-proxy-manual-install.md#set-environment-variables)
 
 ### Create place to store SAML config files and clone required utitility projects
 
@@ -92,7 +96,7 @@ REALM_TEST_USER_LASTNAME=User
 | `SSO_REALM`                 | Name of RH-SSO Realm for users.
 | `SSO_NAMESPACE`             | Namespace of the RH-SSO project in OpenShift.
 | `SSO_SAML_METADATA_URL`     | The URL to pull IdP metadata XML for use by the SAML proxy.
-| 
+|                             | 
 | `REALM_TEST_USER`           | Username for test user.
 | `REALM_TEST_USER_PASSWORD`  | Password for test user.
 | `REALM_TEST_USER_EMAIL`     | Email for test user.
@@ -142,7 +146,7 @@ Note that there is no persistent database backing this template.  This is for te
 
 ## Install SAML ServiceProvider Client
 
-If you chose to install the RH-SSO IdP in the previous steps, you will need to configure the saml-auth Client for the corresponding authentication Realm.  This also installs a test-user account in the realm.  Perform this step after you have created your SAML proxy, as you will need your metadata ServiceProvider XML to establish a client in RH-SSO.
+If you chose to install the RH-SSO IdP in the previous steps, you will need to configure the saml-auth Client for the corresponding authentication Realm.  This also installs a test-user account in the realm.  *Perform this step after you have created your SAML proxy*, as you will need your metadata ServiceProvider XML to establish a client in RH-SSO.
 
 __Note__: because we are adding a configmap to the SSO deploymentconfig, a new instance rolls out with the update.  This in turn requires a configmap update to the saml-auth server.  When debugging, be sure both sides have the correct updates to all certificates.
 

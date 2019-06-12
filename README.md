@@ -39,7 +39,7 @@ This project provides two ways of installing the SAML proxy:
 
 In either case the instructions should be followed against a non critical cluster in your environment first to get an understanding of how they perform in your specific environment and because this project and these instructions come with no guarantee of working in your specific environment.
 
-**WARNING**: The Ansbile instructions are new and less tested than the manual instructions, use at your own discretion.
+**WARNING**: The Ansible instructions are new and less tested than the manual instructions, use at your own discretion.
 
 ## Install Instructions
 
