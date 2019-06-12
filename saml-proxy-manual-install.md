@@ -210,6 +210,8 @@ Verify your `mellon-metadata.xml` downloads:
 curl -k https://${SAML_PROXY_FQDN}/mellon/metadata
 ```
 
+Also, if you are using the test RH-SSO deployment, you now need to perform the steps in [Install SAML ServiceProvider Client](rh-sso-install.md#install-saml-serviceprovider-client) to configure your IdP.  If you are using another IdP, coordinate with them by sharing the resulting mellon-metadata.xml that contains the `ServiceProvider` xml configuration they will need.
+
 ## Update Identity Providers
 
 This configures the OAuth OpenShift Provider to Proxy to your SAML Proxy provider, which in turn proxies to your IdP.  Be sure your RequestHeader fields used here match those in your saml-auth openshift.conf file.
